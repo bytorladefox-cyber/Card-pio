@@ -25,8 +25,11 @@ main{max-width:760px;margin:0 auto;padding:0 14px}
 .hero{text-align:center;padding:14px 10px 4px}
 .hero h1{font-family:'Dancing Script',cursive;font-size:2.3rem;color:var(--rosa-esc)}
 .hero p{color:var(--texto-suave);font-size:.9rem;margin-top:2px}
-.cat{background:var(--card);border-radius:22px;overflow:hidden;margin:20px 0;box-shadow:0 6px 24px rgba(224,85,154,.14);border:1px solid #ffe0ef;display:flex}
-.cat-img{width:36%;object-fit:cover;min-height:100%}
+
+/* Correção aplicada nas imagens para exibirem por completo sem cortes */
+.cat{background:var(--card);border-radius:22px;overflow:hidden;margin:20px 0;box-shadow:0 6px 24px rgba(224,85,154,.14);border:1px solid #ffe0ef;display:flex;flex-direction:column;}
+.cat-img{width:100%;height:auto;display:block;object-fit:contain;background:#2a0815;}
+
 .cat-body{flex:1;padding:16px 14px 16px 16px}
 .cat-title{font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--lilas-esc);margin-bottom:10px;border-bottom:2px dashed #f0c6e2;padding-bottom:6px}
 .item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #ffe9f4}
@@ -70,12 +73,6 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
 .pay.sel{border-color:var(--rosa);background:#ffe4f1;color:var(--rosa-esc)}
 .send{width:100%;margin-top:10px;padding:14px;border:none;border-radius:999px;background:linear-gradient(135deg,var(--rosa),var(--lilas-esc));color:#fff;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(224,85,154,.4);transition:transform .12s}
 .send:active{transform:scale(.97)}
-@media (max-width:640px){
-  .cat{flex-direction:column}
-  .cat-img{width:100%;height:210px}
-  header .nome{font-size:1.7rem}
-  .hero h1{font-size:1.9rem}
-}
 </style>
 </head>
 <body>
@@ -104,7 +101,6 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
       <img class="cat-img" src="copos.jpg" alt="Copo da Felicidade · 380 ml">
       <div class="cat-body">
         <h2 class="cat-title">Copo da Felicidade · 380 ml</h2>
-        
         <div class="item" data-name="Bombom de Morango" data-price="18">
           <div class="item-info"><span class="item-name">Bombom de Morango</span><span class="item-price">R$ 18,00</span></div>
           <div class="stepper">
@@ -155,11 +151,11 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
         </div>
       </div>
     </section>
+
     <section class="cat" id="cat-lanches">
       <img class="cat-img" src="lanches.jpg" alt="Lanches">
       <div class="cat-body">
         <h2 class="cat-title">Lanches</h2>
-        
         <div class="item" data-name="Misto Quente" data-price="10">
           <div class="item-info"><span class="item-name">Misto Quente</span><span class="item-price">R$ 10,00</span></div>
           <div class="stepper">
@@ -178,11 +174,11 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
         </div>
       </div>
     </section>
+
     <section class="cat" id="cat-cuscuz">
       <img class="cat-img" src="cuscuz.jpg" alt="Cuscuz">
       <div class="cat-body">
         <h2 class="cat-title">Cuscuz</h2>
-        
         <div class="item" data-name="Cuscuz Simples" data-price="8">
           <div class="item-info"><span class="item-name">Cuscuz Simples</span><span class="item-price">R$ 8,00</span></div>
           <div class="stepper">
@@ -225,11 +221,11 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
         </div>
       </div>
     </section>
+
     <section class="cat" id="cat-vitaminas">
       <img class="cat-img" src="vitaminas.jpg" alt="Vitaminas">
       <div class="cat-body">
         <h2 class="cat-title">Vitaminas</h2>
-        
         <div class="item" data-name="Vitamina de Abacate" data-price="15">
           <div class="item-info"><span class="item-name">Vitamina de Abacate</span><span class="item-price">R$ 15,00</span></div>
           <div class="stepper">
@@ -256,11 +252,11 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
         </div>
       </div>
     </section>
+
     <section class="cat" id="cat-sucos">
       <img class="cat-img" src="sucos.jpg" alt="Sucos de Polpa · 300 ml">
       <div class="cat-body">
         <h2 class="cat-title">Sucos de Polpa · 300 ml</h2>
-        
         <div class="item" data-name="Suco de Maracujá" data-price="9">
           <div class="item-info"><span class="item-name">Suco de Maracujá</span><span class="item-price">R$ 9,00</span></div>
           <div class="stepper">
@@ -319,167 +315,12 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
         </div>
       </div>
     </section>
+
     <section class="cat" id="cat-refri">
       <img class="cat-img" src="refri.jpg" alt="Refrigerantes">
       <div class="cat-body">
         <h2 class="cat-title">Refrigerantes</h2>
-        
         <div class="item" data-name="Coca-Cola Lata · 350 ml" data-price="9">
           <div class="item-info"><span class="item-name">Coca-Cola Lata · 350 ml</span><span class="item-price">R$ 9,00</span></div>
           <div class="stepper">
-            <button type="button" class="btn minus" onclick="changeQty(this,-1)">−</button>
-            <span class="qty">0</span>
-            <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
-          </div>
-        </div>
-        <div class="item" data-name="Guaraná Lata · 350 ml" data-price="9">
-          <div class="item-info"><span class="item-name">Guaraná Lata · 350 ml</span><span class="item-price">R$ 9,00</span></div>
-          <div class="stepper">
-            <button type="button" class="btn minus" onclick="changeQty(this,-1)">−</button>
-            <span class="qty">0</span>
-            <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
-          </div>
-        </div>
-        <div class="item" data-name="Coca-Cola · 600 ml" data-price="12">
-          <div class="item-info"><span class="item-name">Coca-Cola · 600 ml</span><span class="item-price">R$ 12,00</span></div>
-          <div class="stepper">
-            <button type="button" class="btn minus" onclick="changeQty(this,-1)">−</button>
-            <span class="qty">0</span>
-            <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
-          </div>
-        </div>
-        <div class="item" data-name="Guaraná · 1 Litro" data-price="15">
-          <div class="item-info"><span class="item-name">Guaraná · 1 Litro</span><span class="item-price">R$ 15,00</span></div>
-          <div class="stepper">
-            <button type="button" class="btn minus" onclick="changeQty(this,-1)">−</button>
-            <span class="qty">0</span>
-            <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
-          </div>
-        </div>
-      </div>
-    </section>
-</main>
-<footer>
-  Feito com amor pela <strong>Doce Capricho</strong> 🧁<br>
-  <a href="https://instagram.com/doce_capricho_1_2_3" target="_blank">📸 @doce_capricho_1_2_3</a>
-</footer>
-<button id="fab" onclick="openCart()">🛒<span id="fabCount">0</span></button>
-<div id="overlay" onclick="closeCart()"></div>
-<aside id="drawer">
-  <div class="drawer-head">
-    <h3>Seu pedido 💕</h3>
-    <button onclick="closeCart()">✕</button>
-  </div>
-  <div id="cartItems"></div>
-  <div class="total-row"><span>Total</span><span id="cartTotal">R$ 0,00</span></div>
-  <form id="checkout" onsubmit="return enviarPedido(event)">
-    <input id="nome" placeholder="Seu nome *" autocomplete="name">
-    <input id="endereco" placeholder="Endereço de entrega *" autocomplete="street-address">
-    <label class="lbl">Forma de pagamento *</label>
-    <div class="pay-opts">
-      <label class="pay"><input type="radio" name="pag" value="Pix">Pix</label>
-      <label class="pay"><input type="radio" name="pag" value="Cartão">Cartão</label>
-      <label class="pay"><input type="radio" name="pag" value="Dinheiro">Dinheiro</label>
-    </div>
-    <input id="troco" placeholder="Troco para quanto? (se dinheiro)" style="display:none">
-    <textarea id="obs" rows="2" placeholder="Observações (opcional)"></textarea>
-    <button type="submit" class="send">Enviar pedido no WhatsApp 💬</button>
-  </form>
-</aside>
-<script>
-const WA = '5594991732741';
-let cart = {};
-
-function brl(v){ return 'R$ ' + v.toFixed(2).replace('.', ','); }
-function totalQty(){ return Object.values(cart).reduce((s,i)=>s+i.qty,0); }
-function totalVal(){ return Object.values(cart).reduce((s,i)=>s+i.qty*i.price,0); }
-
-function changeQty(btn, d){
-  const item = btn.closest('.item');
-  const name = item.dataset.name, price = +item.dataset.price;
-  cart[name] = cart[name] || {price: price, qty: 0};
-  cart[name].qty = Math.max(0, cart[name].qty + d);
-  if(cart[name].qty === 0) delete cart[name];
-  item.querySelector('.qty').textContent = cart[name] ? cart[name].qty : 0;
-  item.classList.toggle('on', !!cart[name]);
-  updateUI();
-}
-
-function removeItem(name){
-  delete cart[name];
-  document.querySelectorAll('.item').forEach(el=>{
-    if(el.dataset.name === name){
-      el.querySelector('.qty').textContent = 0;
-      el.classList.remove('on');
-    }
-  });
-  updateUI();
-}
-
-function updateUI(){
-  document.getElementById('fabCount').textContent = totalQty();
-  document.getElementById('cartTotal').textContent = brl(totalVal());
-  const box = document.getElementById('cartItems');
-  const names = Object.keys(cart);
-  if(!names.length){
-    box.innerHTML = '<div class="cart-empty">Seu carrinho está vazio 🥺<br>Escolha suas delícias no cardápio!</div>';
-    return;
-  }
-  box.innerHTML = names.map(n=>{
-    const i = cart[n];
-    return '<div class="cart-row"><span class="nm">' + i.qty + 'x ' + n + '</span>' +
-           '<span class="vl">' + brl(i.qty*i.price) + '</span>' +
-           '<button class="rm" onclick="removeItem(\'' + n.replace(/'/g, '') + '\')">✕</button></div>';
-  }).join('');
-}
-
-function openCart(){
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('overlay').classList.add('open');
-}
-function closeCart(){
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-}
-
-document.querySelectorAll('.pay input').forEach(r=>{
-  r.addEventListener('change', ()=>{
-    document.querySelectorAll('.pay').forEach(p=>p.classList.remove('sel'));
-    r.closest('.pay').classList.add('sel');
-    document.getElementById('troco').style.display = (r.value === 'Dinheiro') ? 'block' : 'none';
-  });
-});
-
-function enviarPedido(e){
-  e.preventDefault();
-  if(!Object.keys(cart).length){ alert('Seu carrinho está vazio! 🥺'); return false; }
-  const nome = document.getElementById('nome').value.trim();
-  const endereco = document.getElementById('endereco').value.trim();
-  const pagEl = document.querySelector('input[name="pag"]:checked');
-  if(!nome){ alert('Por favor, informe seu nome.'); return false; }
-  if(!endereco){ alert('Por favor, informe o endereço de entrega.'); return false; }
-  if(!pagEl){ alert('Por favor, escolha a forma de pagamento.'); return false; }
-  const pag = pagEl.value;
-  const troco = document.getElementById('troco').value.trim();
-  const obs = document.getElementById('obs').value.trim();
-
-  let msg = '🧁 *Pedido - Doce Capricho Confeitaria* 🧁\n------------------------\n';
-  Object.keys(cart).forEach(n=>{
-    const i = cart[n];
-    msg += '▪ ' + i.qty + 'x ' + n + ' - ' + brl(i.qty*i.price) + '\n';
-  });
-  msg += '------------------------\n💰 *Total: ' + brl(totalVal()) + '*\n\n';
-  msg += '👤 Nome: ' + nome + '\n';
-  msg += '📍 Endereço: ' + endereco + '\n';
-  msg += '💳 Pagamento: ' + pag + '\n';
-  if(pag === 'Dinheiro' && troco) msg += '💵 Troco para: ' + troco + '\n';
-  if(obs) msg += '📝 Obs: ' + obs + '\n';
-
-  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
-  return false;
-}
-
-updateUI();
-</script>
-</body>
-</html>
+            <button type="button" class="btn minus" onclick=
