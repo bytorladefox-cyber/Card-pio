@@ -26,7 +26,6 @@ main{max-width:760px;margin:0 auto;padding:0 14px}
 .hero h1{font-family:'Dancing Script',cursive;font-size:2.3rem;color:var(--rosa-esc)}
 .hero p{color:var(--texto-suave);font-size:.9rem;margin-top:2px}
 
-/* Correção aplicada nas imagens para exibirem por completo sem cortes */
 .cat{background:var(--card);border-radius:22px;overflow:hidden;margin:20px 0;box-shadow:0 6px 24px rgba(224,85,154,.14);border:1px solid #ffe0ef;display:flex;flex-direction:column;}
 .cat-img{width:100%;height:auto;display:block;object-fit:contain;background:#2a0815;}
 
@@ -88,8 +87,7 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
   <a href="#cat-cuscuz">🌽 Cuscuz</a>
   <a href="#cat-lanches">🥪 Lanches</a>
   <a href="#cat-vitaminas">🥤 Vitaminas</a>
-  <a href="#cat-sucos">🧃 Sucos</a>
-  <a href="#cat-refri">🥤 Refrigerantes</a>
+  <a href="#cat-sucos">🧃 Sucos e Refri</a>
 </nav>
 <main>
   <div class="hero">
@@ -254,9 +252,9 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
     </section>
 
     <section class="cat" id="cat-sucos">
-      <img class="cat-img" src="sucos.jpg" alt="Sucos de Polpa · 300 ml">
+      <img class="cat-img" src="sucos.jpg" alt="Sucos de Polpa e Refrigerantes">
       <div class="cat-body">
-        <h2 class="cat-title">Sucos de Polpa · 300 ml</h2>
+        <h2 class="cat-title">Sucos de Polpa e Refrigerantes</h2>
         <div class="item" data-name="Suco de Maracujá" data-price="9">
           <div class="item-info"><span class="item-name">Suco de Maracujá</span><span class="item-price">R$ 9,00</span></div>
           <div class="stepper">
@@ -273,8 +271,8 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
             <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
           </div>
         </div>
-        <div class="item" data-name="Suco de Cajuzinho" data-price="9">
-          <div class="item-info"><span class="item-name">Suco de Cajuzinho</span><span class="item-price">R$ 9,00</span></div>
+        <div class="item" data-name="Suco de Caju" data-price="9">
+          <div class="item-info"><span class="item-name">Suco de Caju</span><span class="item-price">R$ 9,00</span></div>
           <div class="stepper">
             <button type="button" class="btn minus" onclick="changeQty(this,-1)">−</button>
             <span class="qty">0</span>
@@ -313,14 +311,13 @@ footer a{color:var(--rosa-esc);font-weight:600;text-decoration:none}
             <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cat" id="cat-refri">
-      <img class="cat-img" src="refri.jpg" alt="Refrigerantes">
-      <div class="cat-body">
-        <h2 class="cat-title">Refrigerantes</h2>
-        <div class="item" data-name="Coca-Cola Lata · 350 ml" data-price="9">
-          <div class="item-info"><span class="item-name">Coca-Cola Lata · 350 ml</span><span class="item-price">R$ 9,00</span></div>
+        <!-- Refrigerantes integrados com os preços corretos da imagem de sucos -->
+        <div class="item" data-name="Coca-Cola Lata · 350 ml" data-price="7">
+          <div class="item-info"><span class="item-name">Coca-Cola Lata · 350 ml</span><span class="item-price">R$ 7,00</span></div>
           <div class="stepper">
-            <button type="button" class="btn minus" onclick=
+            <button type="button" class="btn minus" onclick="changeQty(this,-1)">−</button>
+            <span class="qty">0</span>
+            <button type="button" class="btn plus" onclick="changeQty(this,1)">+</button>
+          </div>
+        </div>
+        <div class="item" data-name="Guar
